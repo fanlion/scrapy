@@ -104,4 +104,6 @@ ITEM_PIPELINES = {
 # MONGODB_DOCNAME = 'course'
 
 
-USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
+# USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
+USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5"
+DOWNLOAD_DELAY = 4

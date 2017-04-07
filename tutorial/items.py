@@ -29,3 +29,13 @@ class BookItem(scrapy.Item):
     img = scrapy.Field()  # 图片url
     pub_date = scrapy.Field()  # 出版日期
     comment_count = scrapy.Field()  # 评论数量
+
+
+class ZhihuItem(scrapy.Item):
+    """
+    知乎 用户
+    """
+
+    name = scrapy.Field()  # 姓名
+
+    follower = scrapy.Field()  # 关注他的人

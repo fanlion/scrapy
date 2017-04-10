@@ -26,7 +26,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
 # CONCURRENT_REQUESTS_PER_IP = 16
@@ -97,13 +97,14 @@ ITEM_PIPELINES = {
 }
 # IMAGES_STORE = 'D:\\img\\'
 
-# 连接数据库的信息，存在mooc的数据集中
-# MONGODB_HOST = 'localhost'
-# MONGODB_PORT = 27017
-# MONGODB_DBNAME = 'mooc'
-# MONGODB_DOCNAME = 'course'
+# 连接mongodb数据库的信息
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_DB = 'scrapy_data'
 
+# redis连接配置
+REDIS_URL = 'localhost'
+REDIS_PORT = 6379
 
-# USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
-USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5"
-DOWNLOAD_DELAY = 4
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
+# USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5"

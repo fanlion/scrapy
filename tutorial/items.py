@@ -35,7 +35,5 @@ class ZhihuItem(scrapy.Item):
     """
     知乎 用户
     """
-
     name = scrapy.Field()  # 姓名
-
-    follower = scrapy.Field()  # 关注他的人
+    # follower = scrapy.Field()  # 关注他的人

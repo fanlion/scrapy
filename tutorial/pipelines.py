@@ -9,6 +9,7 @@ import pymongo
 import scrapy
 from scrapy.exceptions import DropItem
 from scrapy.pipelines.images import ImagesPipeline
+import xlwt, xlutils
 
 
 class MoocPipeline(object):
@@ -58,6 +59,7 @@ class MongoDBPipeline(object):
     """
     设置mongodb连接, 把爬取到的item保存到数据库中
     """
+
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
@@ -82,3 +84,33 @@ class MongoDBPipeline(object):
         collection_name = item.__class__.__name__
         self.db[collection_name].insert(dict(item))
         return item
+
+
+class ExcelPipeline(object):
+    """
+    把数据保存到 Excel文件中
+    """
+
+    def __init__(self, excel_file, excel_sheet_name):
+        self.excel_file = excel_file  # 要保存的excel文件
+        self.excel_sheet_name = excel_sheet_name  # 要创建的Excel Sheet名字
+
+        self.workbook = None
+        self.worksheet = None
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            excel_file=crawler.settings.get('EXCEL_FILE'),
+            excel_sheet_name=crawler.settings.get('EXCEL_SHEET_NAME')
+        )
+
+    def open_spider(self, spider):
+        self.workbook = xlwt.Workbook()
+        self.worksheet = self.workbook.add_sheet('')
+
+    def close_spider(self, spider):
+        pass
+
+    def process_item(self, item, spider):
+        pass

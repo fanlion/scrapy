@@ -37,3 +37,29 @@ class ZhihuItem(scrapy.Item):
     """
     name = scrapy.Field()  # 姓名
     # follower = scrapy.Field()  # 关注他的人
+
+
+class ZhaoPinItem(scrapy.Item):
+    """
+    百度招聘 工作
+    """
+    end_date = scrapy.Field()  # 截止日期
+    title_jd = scrapy.Field()  # 岗位名称
+    common_name = scrapy.Field()
+    experience = scrapy.Field()
+    salary = scrapy.Field()
+    location = scrapy.Field()
+    ori_experience = scrapy.Field()
+    district = scrapy.Field()
+    ori_district = scrapy.Field()
+    domain = scrapy.Field()
+    title = scrapy.Field()
+    province = scrapy.Field()
+    start_date = scrapy.Field()
+    source = scrapy.Field()  # 信息来源
+    description = scrapy.Field()  # 职位描述
+    type = scrapy.Field()  # 职位类型
+    n_official_name = scrapy.Field()  # 公司名称
+    company_description = scrapy.Field()  # 公司描述
+    industry = scrapy.Field()  # 行业
+    company_address = scrapy.Field()  # 公司地址

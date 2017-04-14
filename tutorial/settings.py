@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'tutorial.spiders'
 # USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -92,7 +92,7 @@ DOWNLOAD_DELAY = 3
 ITEM_PIPELINES = {
     # 'tutorial.pipelines.MoocPipeline': 2,
     # 'tutorial.pipelines.ImagePipeline': 100,
-    'tutorial.pipelines.MongoDBPipeline': 1,
+    # 'tutorial.pipelines.MongoDBPipeline': 1,
 
 }
 # IMAGES_STORE = 'D:\\img\\'
@@ -106,5 +106,11 @@ MONGODB_DB = 'scrapy_data'
 REDIS_URL = 'localhost'
 REDIS_PORT = 6379
 
-USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
+# EXCEL保存的位置
+EXCEL_FILE = 'zhipin.xls'
+# EXCEL默认只有一个sheet，该SHEET的名字为
+EXCEL_SHEET_NAME = '射频工程师'
+
+# USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
 # USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5"
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0'
